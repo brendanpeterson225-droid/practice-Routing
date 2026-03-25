@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, input} from '@angular/core';
+import { Post } from '../models/post';
 
 
 @Component({
@@ -8,6 +9,10 @@ import { Component} from '@angular/core';
   styleUrl: './post-detail.component.css'
 })
 export class PostDetailComponent {
+
+  id = input.required();
+  post!: Post;
+
 
   //Option - 1 (pre-Angular 19): inject the ActivatedRouted service that 
   // would allow you to access the activated route so, we can access the 
